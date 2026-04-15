@@ -1,0 +1,134 @@
+/* RESET & BODY */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e5e7eb;
+  overflow-y: auto;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 100px; /* biar tidak ketutup tombol */
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.badge {
+  background: #334155;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* LIST ITEM */
+.item {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.check {
+  color: #22c55e;
+}
+
+/* FOOTER TEXT */
+.footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* CHECKBOX */
+.agree {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #2563eb;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0f172a;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-close {
+  background: #475569;
+  color: white;
+}
+
+.btn-done {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-done:hover {
+  background: #1d4ed8;
+}

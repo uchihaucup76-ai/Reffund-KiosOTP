@@ -1,0 +1,130 @@
+import React, { useEffect, useState } from "react";
+
+export default function RefundUI() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setShow(true), 100);
+  }, []);
+
+  return (
+    <div className={`app ${show ? "fade-in" : ""}`}>
+      <div className="container">
+        <div className="header">
+          <h1>📘 Tutorial & Informasi</h1>
+          <div className="badge">Penting!</div>
+        </div>
+
+        <p className="desc">
+          Pahami semua informasi serta syarat & ketentuan sebelum membeli nomor virtual.
+        </p>
+
+        <div className="card slide-up">
+          <h2>🔄 Refund Otomatis</h2>
+          <div className="item"><span className="check">✔</span>Pesanan belum menerima SMS/kode</div>
+          <div className="item"><span className="check">✔</span>Bukan status resend</div>
+          <div className="item"><span className="check">✔</span>Refund 100% tanpa potongan</div>
+        </div>
+
+        <div className="card slide-up delay">
+          <h2>🛠️ Refund Admin</h2>
+          <div className="item"><span className="check">✔</span>Bug, maintenance, atau error sistem</div>
+          <div className="item"><span className="check">✔</span>Nomor bermasalah (tidak termasuk banned, 2FA, dll)</div>
+          <div className="item"><span className="check">✔</span>Refund 100% tanpa potongan</div>
+        </div>
+
+        <div className="footer">
+          Dengan melanjutkan, Anda menyetujui semua ketentuan refund.
+        </div>
+
+        <div className="agree">
+          <input type="checkbox" /> Saya telah membaca semuanya
+        </div>
+      </div>
+
+      <div className="actions">
+        <button className="btn-close">Tutup</button>
+        <button
+          className="btn-done"
+          onClick={() =>
+            (window.location.href =
+              "https://t.me/buynokosmurmerdisini_bot?start=_tgr_A4uGQxUwYjhl")
+          }
+        >
+          Selesai ✔
+        </button>
+      </div>
+
+      <style>{`
+        body { margin:0 }
+        .app {
+          font-family: 'Segoe UI', sans-serif;
+          background: linear-gradient(135deg,#0f172a,#1e293b);
+          color:#e5e7eb;
+          min-height:100vh;
+          opacity:0;
+          transition:0.5s ease;
+        }
+        .fade-in { opacity:1 }
+
+        .container {
+          max-width:420px;
+          margin:auto;
+          padding:20px;
+          padding-bottom:100px;
+        }
+
+        .header { display:flex;justify-content:space-between;align-items:center }
+        .badge { background:#334155;padding:6px 12px;border-radius:999px;font-size:12px }
+        .desc { font-size:14px;color:#cbd5f5 }
+
+        .card {
+          background:rgba(255,255,255,0.05);
+          border:1px solid rgba(255,255,255,0.1);
+          border-radius:16px;
+          padding:16px;
+          margin-top:16px;
+          backdrop-filter:blur(10px);
+          transform:translateY(20px);
+          opacity:0;
+          transition:0.5s ease;
+        }
+
+        .slide-up { animation:slideUp 0.6s forwards }
+        .delay { animation-delay:0.2s }
+
+        @keyframes slideUp {
+          to { transform:translateY(0); opacity:1 }
+        }
+
+        .item { display:flex;gap:10px;margin:10px 0;font-size:14px }
+        .check { color:#22c55e }
+
+        .footer { margin-top:20px;font-size:13px;color:#94a3b8 }
+
+        .agree { margin-top:10px;font-size:13px }
+
+        .actions {
+          position:fixed;
+          bottom:0;
+          width:100%;
+          background:#0f172a;
+          padding:12px;
+          display:flex;
+          gap:10px;
+        }
+
+        button {
+          flex:1;
+          padding:12px;
+          border:none;
+          border-radius:10px;
+          font-weight:600;
+        }
+
+        .btn-close { background:#475569;color:white }
+        .btn-done { background:#2563eb;color:white }
+      `}</style>
+    </div>
+  );
+}
